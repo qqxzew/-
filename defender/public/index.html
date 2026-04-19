@@ -383,6 +383,17 @@
     </div>
   </div>
 
+  <!-- ── Analytics Card ─────────────────────────── -->
+  <div class="card">
+    <div class="card-title">📊 Analytics <span style="font-size:.65rem;font-weight:400;color:var(--text-dim);margin-left:8px">MongoDB Atlas Aggregation</span></div>
+    <div style="margin-bottom:12px">
+      <input id="searchInput" type="text" placeholder="🔍 Search alerts…" style="width:100%;padding:10px 14px;background:var(--surface2);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:.85rem;outline:none" oninput="debounceSearch(this.value)">
+    </div>
+    <div id="searchResults" style="display:none;margin-bottom:16px"></div>
+    <div id="analyticsChart" style="display:flex;flex-wrap:wrap;gap:10px"></div>
+    <div id="topThreat" style="margin-top:14px"></div>
+  </div>
+
 </div>
 
 <!-- ── Toast ─────────────────────────────────────── -->
@@ -531,9 +542,68 @@ async function checkStatus() {
 loadSettings();
 loadAlerts();
 checkStatus();
+loadAnalytics();
 
 // Poll every 10 seconds
-setInterval(() => { loadAlerts(); checkStatus(); }, 10000);
+setInterval(() => { loadAlerts(); checkStatus(); loadAnalytics(); }, 10000);
+
+/* ── Analytics ────────────────────────────────────── */
+async function loadAnalytics() {
+  try {
+    const res = await fetch(API + '/api/analytics');
+    const data = await res.json();
+    renderAnalytics(data);
+  } catch { /* offline */ }
+}
+
+function renderAnalytics({ byType, topScore }) {
+  const chart = document.getElementById('analyticsChart');
+  if (!byType || !byType.length) {
+    chart.innerHTML = '<span style="color:var(--text-dim);font-size:.85rem">No data yet</span>';
+    return;
+  }
+  chart.innerHTML = byType.map(b => `
+    <div style="background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:12px 16px;min-width:140px;flex:1">
+      <div style="font-size:.75rem;color:var(--text-dim);margin-bottom:4px">${dangerLabel(b._id)}</div>
+      <div style="font-size:1.4rem;font-weight:700;font-family:var(--font-head)">${b.count}</div>
+      <div style="font-size:.72rem;color:var(--text-dim)">avg score: <b style="color:var(--text)">${Math.round(b.avgScore)}</b></div>
+    </div>
+  `).join('');
+
+  const topEl = document.getElementById('topThreat');
+  if (topScore) {
+    topEl.innerHTML = `<div style="font-size:.75rem;color:var(--text-dim);margin-bottom:4px">🏴 Highest risk alert ever — score <b style="color:#E53935">${topScore.score}</b></div>
+      <div style="font-size:.82rem;color:var(--text-dim);font-style:italic">${escapeHtml(topScore.original || topScore.explanation || '')}</div>`;
+  }
+}
+
+/* ── Search ───────────────────────────────────────── */
+let searchTimer;
+function debounceSearch(q) {
+  clearTimeout(searchTimer);
+  searchTimer = setTimeout(() => doSearch(q), 350);
+}
+
+async function doSearch(q) {
+  const container = document.getElementById('searchResults');
+  if (!q.trim()) { container.style.display = 'none'; return; }
+  try {
+    const res = await fetch(API + '/api/search?q=' + encodeURIComponent(q));
+    const results = await res.json();
+    container.style.display = 'block';
+    if (!results.length) {
+      container.innerHTML = '<div style="color:var(--text-dim);font-size:.82rem">No matches found</div>';
+      return;
+    }
+    container.innerHTML = results.map(a => `
+      <div style="padding:8px 0;border-bottom:1px solid var(--border);font-size:.82rem">
+        <span class="score-badge ${scoreClass(a.score)}" style="font-size:.7rem;padding:2px 6px">${a.score}</span>
+        <span style="margin-left:8px;color:var(--text)">${escapeHtml(a.original || a.explanation)}</span>
+        <span style="float:right;color:var(--text-dim)">${timeAgo(a.timestamp)}</span>
+      </div>
+    `).join('');
+  } catch { /* offline */ }
+}
 </script>
 </body>
 </html>

@@ -22,7 +22,11 @@ const AlertSchema = new mongoose.Schema({
   explanation: { type: String, default: '' },
   original:    { type: String, default: '' },
   timestamp:   { type: String, default: () => new Date().toISOString() },
+  createdAt:   { type: Date,   default: Date.now },
 });
+
+// TTL index — auto-delete alerts older than 30 days
+AlertSchema.index({ createdAt: 1 }, { expireAfterSeconds: 60 * 60 * 24 * 30 });
 
 const ConfigSchema = new mongoose.Schema({
   _id:         { type: String, default: 'singleton' },
@@ -83,6 +87,52 @@ app.post('/api/alert', async (req, res) => {
 app.get('/api/alerts', async (req, res) => {
   const alerts = await Alert.find().sort({ id: -1 }).limit(10).lean();
   res.json(alerts);
+});
+
+// ── GET /api/analytics ───────────────────────────────────
+// Aggregation pipeline: threat stats by type + daily counts
+app.get('/api/analytics', async (req, res) => {
+  const [byType, daily, topScore] = await Promise.all([
+    // Count + avg score per danger_type
+    Alert.aggregate([
+      { $group: {
+          _id: '$danger_type',
+          count: { $sum: 1 },
+          avgScore: { $avg: '$score' },
+          maxScore: { $max: '$score' },
+      }},
+      { $sort: { count: -1 } },
+    ]),
+    // Alerts per day (last 7 days)
+    Alert.aggregate([
+      { $match: { createdAt: { $gte: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000) } } },
+      { $group: {
+          _id: { $dateToString: { format: '%Y-%m-%d', date: '$createdAt' } },
+          count: { $sum: 1 },
+          avgScore: { $avg: '$score' },
+      }},
+      { $sort: { _id: 1 } },
+    ]),
+    // Highest-risk alert ever
+    Alert.findOne().sort({ score: -1 }).lean(),
+  ]);
+  res.json({ byType, daily, topScore });
+});
+
+// ── GET /api/search?q=text ───────────────────────────────
+// Full-text search over alert messages using Atlas Search ($text fallback)
+app.get('/api/search', async (req, res) => {
+  const q = (req.query.q || '').trim();
+  if (!q) return res.json([]);
+  const regex = new RegExp(q, 'i');
+  const results = await Alert.find({
+    $or: [
+      { original:    regex },
+      { explanation: regex },
+      { danger_type: regex },
+    ],
+  }).sort({ score: -1 }).limit(20).lean();
+  res.json(results);
 });
 
 // ── GET /api/ping ────────────────────────────────────────
