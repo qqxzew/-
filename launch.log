@@ -1,0 +1,12 @@
+Error: Requires permission not exported from uid 10191
+args: [-p, com.meemaw.assist, -c, android.intent.category.LAUNCHER, 1]
+ arg: "-p"
+ arg: "com.meemaw.assist"
+ arg: "-c"
+ arg: "android.intent.category.LAUNCHER"
+ arg: "1"
+data="com.meemaw.assist"
+data="android.intent.category.LAUNCHER"
+    topResumedActivity=ActivityRecord{d6cba7a u0 com.meemaw.assist/.MainActivity t10}
+  ResumedActivity: ActivityRecord{d6cba7a u0 com.meemaw.assist/.MainActivity t10}
+shot-saved

@@ -1,0 +1,25 @@
+# Node
+node_modules/
+npm-debug.log*
+
+# Secrets
+.env
+local.properties
+defender/local.properties
+
+# Android build
+.gradle/
+build/
+app/build/
+defender/android/.gradle/
+defender/android/build/
+defender/android/app/build/
+defender/android/.idea/
+defender/android/*.iml
+defender/android/app/*.iml
+*.iml
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Warm paper palette — minimal, high-contrast, easy on elderly eyes. -->
+    <color name="background">#F8F3EA</color>
+    <color name="surface">#FFFDF9</color>
+    <color name="surface_muted">#EFE6D6</color>
+    <color name="on_surface">#1F1B16</color>
+    <color name="on_surface_secondary">#746A5C</color>
+
+    <!-- Single warm accent. -->
+    <color name="primary">#C4502D</color>
+    <color name="primary_dark">#9D3F22</color>
+    <color name="primary_light">#E6BEA9</color>
+    <color name="on_primary">#FFFDF9</color>
+
+    <!-- Chat bubbles. -->
+    <color name="bubble_user">#C4502D</color>
+    <color name="bubble_ai">#EFE6D6</color>
+    <color name="text_on_user_bubble">#FFFDF9</color>
+    <color name="text_on_ai_bubble">#1F1B16</color>
+
+    <!-- Scam alert. -->
+    <color name="scam_warning">#B3301C</color>
+    <color name="scam_warning_bg">#F9E4DD</color>
+
+    <!-- Utility. -->
+    <color name="status_overlay_bg">#E61F1B16</color>
+    <color name="input_bg">#FFFDF9</color>
+    <color name="input_stroke">#D9CDB8</color>
+    <color name="divider">#E4DACB</color>
+</resources>

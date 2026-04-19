@@ -1,0 +1,28 @@
+# Android build outputs
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+android/.idea/
+android/*.iml
+android/app/*.iml
+android/captures/
+android/.externalNativeBuild
+android/.cxx
+
+# Node
+node_modules/
+npm-debug.log*
+
+# Secrets — never commit!
+local.properties
+.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.iml

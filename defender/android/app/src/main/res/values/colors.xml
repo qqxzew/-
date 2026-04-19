@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="red_primary">#E53935</color>
+    <color name="red_dark">#B71C1C</color>
+    <color name="red_light">#FFEBEE</color>
+    <color name="green_ok">#43A047</color>
+    <color name="bg">#FFFFFF</color>
+    <color name="bg_card">#F5F5F7</color>
+    <color name="text_primary">#1A1A1A</color>
+    <color name="text_secondary">#666666</color>
+    <color name="yellow_warn">#FDD835</color>
+    <color name="orange_warn">#FB8C00</color>
+    <color name="black_overlay">#66000000</color>
+</resources>

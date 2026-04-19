@@ -1,0 +1,106 @@
+--------- beginning of main
+04-19 02:42:21.572 16046 16046 I m.meemaw.assist: Late-enabling -Xcheck:jni
+04-19 02:42:21.762 16046 16046 I m.meemaw.assist: Using CollectorTypeCC GC.
+04-19 02:42:21.764 16046 16046 W m.meemaw.assist: Unexpected CPU variant for x86: x86_64.
+04-19 02:42:21.764 16046 16046 W m.meemaw.assist: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, tremont, kabylake, default
+04-19 02:42:21.898 16046 16046 D CompatibilityChangeReporter: Compat change id reported: 171979766; UID 10190; state: ENABLED
+04-19 02:42:21.899 16046 16046 D CompatibilityChangeReporter: Compat change id reported: 242716250; UID 10190; state: ENABLED
+04-19 02:42:21.925 16046 16046 W ziparchive: Unable to open '/data/app/~~59-XvXBiOcEEBgpLRLeE-w==/com.meemaw.assist-6MpW8llHf8hYOnLfTzgRKQ==/base.dm': No such file or directory
+04-19 02:42:21.925 16046 16046 W ziparchive: Unable to open '/data/app/~~59-XvXBiOcEEBgpLRLeE-w==/com.meemaw.assist-6MpW8llHf8hYOnLfTzgRKQ==/base.dm': No such file or directory
+04-19 02:42:22.131 16046 16046 D nativeloader: Configuring clns-6 for other apk /data/app/~~59-XvXBiOcEEBgpLRLeE-w==/com.meemaw.assist-6MpW8llHf8hYOnLfTzgRKQ==/base.apk. target_sdk_version=34, uses_libraries=, library_path=/data/app/~~59-XvXBiOcEEBgpLRLeE-w==/com.meemaw.assist-6MpW8llHf8hYOnLfTzgRKQ==/lib/x86_64:/data/app/~~59-XvXBiOcEEBgpLRLeE-w==/com.meemaw.assist-6MpW8llHf8hYOnLfTzgRKQ==/base.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.meemaw.assist
+04-19 02:42:22.147 16046 16046 V GraphicsEnvironment: Currently set values for:
+04-19 02:42:22.147 16046 16046 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+04-19 02:42:22.147 16046 16046 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+04-19 02:42:22.148 16046 16046 V GraphicsEnvironment: ANGLE GameManagerService for com.meemaw.assist: false
+04-19 02:42:22.148 16046 16046 V GraphicsEnvironment: com.meemaw.assist is not listed in per-application setting
+04-19 02:42:22.148 16046 16046 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+04-19 02:42:22.231 16046 16068 D libEGL  : loaded /vendor/lib64/egl/libEGL_emulation.so
+04-19 02:42:22.235 16046 16068 D libEGL  : loaded /vendor/lib64/egl/libGLESv1_CM_emulation.so
+04-19 02:42:22.242 16046 16068 D libEGL  : loaded /vendor/lib64/egl/libGLESv2_emulation.so
+04-19 02:42:22.258 16046 16046 D AppCompatDelegate: Checking for metadata for AppLocalesMetadataHolderService : Service not found
+04-19 02:42:22.341 16046 16046 D CompatibilityChangeReporter: Compat change id reported: 210923482; UID 10190; state: ENABLED
+04-19 02:42:22.347 16046 16046 W m.meemaw.assist: Accessing hidden method Landroid/view/View;->computeFitSystemWindows(Landroid/graphics/Rect;Landroid/graphics/Rect;)Z (unsupported, reflection, allowed)
+04-19 02:42:22.488 16046 16046 W m.meemaw.assist: Accessing hidden method Landroid/view/ViewGroup;->makeOptionalFitsSystemWindows()V (unsupported, reflection, allowed)
+04-19 02:42:22.617 16046 16046 D CompatibilityChangeReporter: Compat change id reported: 247079863; UID 10190; state: ENABLED
+04-19 02:42:22.660 16046 16046 D CompatibilityChangeReporter: Compat change id reported: 237531167; UID 10190; state: DISABLED
+04-19 02:42:22.664 16046 16046 W OpenGLRenderer: Unknown dataspace 0
+04-19 02:42:22.762 16046 16066 W OpenGLRenderer: Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...
+04-19 02:42:22.763 16046 16066 W OpenGLRenderer: Failed to initialize 101010-2 format, error = EGL_SUCCESS
+04-19 02:42:22.929 16046 16066 I Gralloc4: mapper 4.x is not supported
+04-19 02:42:22.980 16046 16066 E OpenGLRenderer: Unable to match the desired swap behavior.
+04-19 02:42:23.131 16046 16063 I OpenGLRenderer: Davey! duration=898ms; Flags=1, FrameTimelineVsyncId=147521, IntendedVsync=2692124027978, Vsync=2692590694626, InputEventId=0, HandleInputStart=2692598215889, AnimationStart=2692598218946, PerformTraversalsStart=2692598328037, DrawStart=2692903963292, FrameDeadline=2692140694644, FrameInterval=2692597940295, FrameStartTime=16666666, SyncQueued=2692937682805, SyncStart=2692956158870, IssueDrawCommandsStart=2692958494420, SwapBuffers=2693026059326, FrameCompleted=2693041303037, DequeueBufferDuration=3579, QueueBufferDuration=214618, GpuCompleted=2693041303037, SwapBuffersCompleted=2693029894790, DisplayPresentTime=0, CommandSubmissionCompleted=2693026059326, 
+04-19 02:42:23.361 16046 16071 D AppScanner: Scanned 20 launchable apps
+04-19 02:42:25.671 16046 16046 D CompatibilityChangeReporter: Compat change id reported: 163400105; UID 10190; state: ENABLED
+04-19 02:42:25.672 16046 16046 I ImeTracker: com.meemaw.assist:d8b68e48: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
+04-19 02:42:25.673 16046 16046 D InputMethodManager: showSoftInput() view=com.google.android.material.textfield.TextInputEditText{e1dcf28 VFED..CL. .F.P..ID 0,0-434,291 #7f0800be app:id/etMessage aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+04-19 02:42:25.690 16046 16066 D EGL_emulation: app_time_stats: avg=313.10ms min=6.90ms max=2419.09ms count=8
+04-19 02:42:25.701 16046 16046 I AssistStructure: Flattened final assist data: 3116 bytes, containing 1 windows, 21 views
+04-19 02:42:26.223 16046 16046 D InsetsController: show(ime(), fromIme=true)
+04-19 02:42:26.372 16046 16046 I ImeTracker: com.meemaw.assist:d8b68e48: onShown
+04-19 02:42:26.849 16046 16066 D EGL_emulation: app_time_stats: avg=230.47ms min=15.65ms max=450.15ms count=5
+04-19 02:42:27.938 16046 16066 D EGL_emulation: app_time_stats: avg=51.65ms min=8.84ms max=496.98ms count=21
+04-19 02:42:28.265 16046 16099 D ProfileInstaller: Installing profile for com.meemaw.assist
+04-19 02:42:28.535 16046 16046 I ImeTracker: com.meemaw.assist:ae8e1cce: onRequestHide at ORIGIN_CLIENT_HIDE_SOFT_INPUT reason HIDE_SOFT_INPUT
+04-19 02:42:28.664 16046 16046 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=falsecallback=ImeCallback=ImeOnBackInvokedCallback@180171510 Callback=android.window.IOnBackInvokedCallback$Stub$Proxy@fe7ae34
+04-19 02:42:28.765 16046 16071 D TrafficStats: tagSocket(106) with statsTag=0xffffffff, statsUid=-1
+04-19 02:42:28.807 16046 16046 I ImeTracker: com.meemaw.assist:78e669a2: onRequestHide at ORIGIN_CLIENT_HIDE_SOFT_INPUT reason HIDE_SOFT_INPUT_BY_INSETS_API
+04-19 02:42:28.807 16046 16046 I ImeTracker: com.meemaw.assist:ae8e1cce: onHidden
+04-19 02:42:28.948 16046 16066 D EGL_emulation: app_time_stats: avg=38.10ms min=1.58ms max=499.06ms count=23
+04-19 02:42:30.055 16046 16066 D EGL_emulation: app_time_stats: avg=126.52ms min=1.94ms max=499.37ms count=8
+04-19 02:42:30.088 16046 16071 D LLMRepository: Raw LLM response: {"mode":"CHAT","message":"Hello there! How can I help you today?"}
+04-19 02:42:31.554 16046 16066 D EGL_emulation: app_time_stats: avg=145.34ms min=2.78ms max=500.38ms count=10
+04-19 02:42:33.071 16046 16066 D EGL_emulation: app_time_stats: avg=505.60ms min=499.51ms max=517.11ms count=3
+04-19 02:42:34.650 16046 16066 D EGL_emulation: app_time_stats: avg=526.00ms min=498.11ms max=578.99ms count=3
+04-19 02:42:36.071 16046 16066 D EGL_emulation: app_time_stats: avg=473.61ms min=421.93ms max=499.66ms count=3
+04-19 02:42:37.088 16046 16066 D EGL_emulation: app_time_stats: avg=508.41ms min=500.57ms max=516.25ms count=2
+04-19 02:42:38.088 16046 16066 D EGL_emulation: app_time_stats: avg=500.16ms min=497.61ms max=502.71ms count=2
+04-19 02:42:39.588 16046 16066 D EGL_emulation: app_time_stats: avg=499.80ms min=499.07ms max=500.55ms count=3
+04-19 02:42:40.588 16046 16066 D EGL_emulation: app_time_stats: avg=500.08ms min=499.55ms max=500.62ms count=2
+04-19 02:42:41.603 16046 16066 D EGL_emulation: app_time_stats: avg=507.62ms min=499.60ms max=515.64ms count=2
+04-19 02:42:43.103 16046 16066 D EGL_emulation: app_time_stats: avg=500.10ms min=499.64ms max=500.82ms count=3
+04-19 02:42:44.105 16046 16066 D EGL_emulation: app_time_stats: avg=500.90ms min=499.67ms max=502.13ms count=2
+04-19 02:42:45.605 16046 16066 D EGL_emulation: app_time_stats: avg=499.97ms min=497.70ms max=502.19ms count=3
+04-19 02:42:46.464 16046 16046 I ImeTracker: com.meemaw.assist:5a20400a: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
+04-19 02:42:46.464 16046 16046 D InputMethodManager: showSoftInput() view=com.google.android.material.textfield.TextInputEditText{e1dcf28 VFED..CL. .F.P.... 0,0-434,291 #7f0800be app:id/etMessage aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+04-19 02:42:46.643 16046 16046 D InsetsController: show(ime(), fromIme=true)
+04-19 02:42:46.648 16046 16066 D EGL_emulation: app_time_stats: avg=521.15ms min=500.78ms max=541.53ms count=2
+04-19 02:42:46.754 16046 16046 I ImeTracker: com.meemaw.assist:5a20400a: onShown
+04-19 02:42:47.290 16046 16046 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=falsecallback=ImeCallback=ImeOnBackInvokedCallback@180171510 Callback=android.window.IOnBackInvokedCallback$Stub$Proxy@2a1061d
+04-19 02:43:10.760 16046 16066 D EGL_emulation: app_time_stats: avg=2673.72ms min=1.76ms max=23413.49ms count=9
+04-19 02:43:10.855 16046 16046 I ImeTracker: com.meemaw.assist:476708c7: onRequestHide at ORIGIN_CLIENT_HIDE_SOFT_INPUT reason HIDE_SOFT_INPUT_BY_INSETS_API
+04-19 02:43:10.856 16046 16046 I ImeTracker: com.meemaw.assist:6b6619dc: onHidden
+04-19 02:43:11.807 16046 16066 D EGL_emulation: app_time_stats: avg=523.81ms min=26.58ms max=1021.04ms count=2
+04-19 02:43:11.821 16046 16046 D ShowMeImageStore: Created capture target path=/data/user/0/com.meemaw.assist/cache/show_me_capture/capture_5739382987828614095.jpg uri=content://com.meemaw.assist.fileprovider/show_me_cache/capture_5739382987828614095.jpg
+04-19 02:43:11.822 16046 16046 D MainActivity: Launching show-me capture path=/data/user/0/com.meemaw.assist/cache/show_me_capture/capture_5739382987828614095.jpg uri=content://com.meemaw.assist.fileprovider/show_me_cache/capture_5739382987828614095.jpg
+04-19 02:44:00.939 16046 16046 D CompatibilityChangeReporter: Compat change id reported: 78294732; UID 10190; state: ENABLED
+04-19 02:44:00.950 16046 16046 D MainActivity: TakePicture result success=true path=/data/user/0/com.meemaw.assist/cache/show_me_capture/capture_5739382987828614095.jpg exists=true size=72968
+04-19 02:44:01.089 16046 16066 E OpenGLRenderer: Unable to match the desired swap behavior.
+04-19 02:44:02.475 16046 16066 D EGL_emulation: app_time_stats: avg=113.74ms min=1.95ms max=498.57ms count=10
+04-19 02:44:03.790 16046 16046 I ImeTracker: com.meemaw.assist:1209b24b: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
+04-19 02:44:03.791 16046 16046 D InputMethodManager: showSoftInput() view=com.google.android.material.textfield.TextInputEditText{e1dcf28 VFED..CL. .F.P.... 0,187-434,478 #7f0800be app:id/etMessage aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+04-19 02:44:03.986 16046 16046 D InsetsController: show(ime(), fromIme=true)
+04-19 02:44:04.019 16046 16066 D EGL_emulation: app_time_stats: avg=514.77ms min=496.77ms max=548.26ms count=3
+04-19 02:44:04.119 16046 16046 I ImeTracker: com.meemaw.assist:1209b24b: onShown
+04-19 02:44:05.026 16046 16066 D EGL_emulation: app_time_stats: avg=88.39ms min=6.24ms max=392.75ms count=11
+04-19 02:44:06.121 16046 16066 D EGL_emulation: app_time_stats: avg=68.31ms min=15.39ms max=497.09ms count=16
+04-19 02:44:07.488 16046 16066 D EGL_emulation: app_time_stats: avg=455.55ms min=351.38ms max=514.40ms count=3
+04-19 02:44:08.989 16046 16066 D EGL_emulation: app_time_stats: avg=500.46ms min=499.22ms max=502.45ms count=3
+04-19 02:44:10.487 16046 16066 D EGL_emulation: app_time_stats: avg=499.29ms min=498.82ms max=500.21ms count=3
+04-19 02:44:11.504 16046 16066 D EGL_emulation: app_time_stats: avg=508.45ms min=500.39ms max=516.52ms count=2
+04-19 02:44:13.004 16046 16066 D EGL_emulation: app_time_stats: avg=499.96ms min=499.61ms max=500.20ms count=3
+04-19 02:44:14.503 16046 16066 D EGL_emulation: app_time_stats: avg=499.84ms min=498.73ms max=500.68ms count=3
+04-19 02:44:15.505 16046 16066 D EGL_emulation: app_time_stats: avg=500.58ms min=499.83ms max=501.32ms count=2
+04-19 02:44:16.520 16046 16066 D EGL_emulation: app_time_stats: avg=507.69ms min=499.89ms max=515.50ms count=2
+04-19 02:44:17.522 16046 16066 D EGL_emulation: app_time_stats: avg=500.66ms min=499.68ms max=501.64ms count=2
+04-19 02:44:18.522 16046 16066 D EGL_emulation: app_time_stats: avg=500.15ms min=499.66ms max=500.64ms count=2
+04-19 02:44:20.022 16046 16066 D EGL_emulation: app_time_stats: avg=499.78ms min=498.55ms max=500.86ms count=3
+04-19 02:44:21.037 16046 16066 D EGL_emulation: app_time_stats: avg=507.55ms min=498.80ms max=516.30ms count=2
+04-19 02:44:22.037 16046 16066 D EGL_emulation: app_time_stats: avg=500.04ms min=499.94ms max=500.14ms count=2
+04-19 02:44:23.037 16046 16066 D EGL_emulation: app_time_stats: avg=500.08ms min=499.97ms max=500.18ms count=2
+04-19 02:44:24.037 16046 16066 D EGL_emulation: app_time_stats: avg=500.08ms min=500.04ms max=500.12ms count=2
+04-19 02:44:25.054 16046 16066 D EGL_emulation: app_time_stats: avg=508.46ms min=501.02ms max=515.91ms count=2
+04-19 02:44:26.556 16046 16066 D EGL_emulation: app_time_stats: avg=500.59ms min=498.11ms max=502.26ms count=3
+04-19 02:44:28.055 16046 16066 D EGL_emulation: app_time_stats: avg=499.68ms min=498.82ms max=501.08ms count=3
+04-19 02:44:29.071 16046 16066 D EGL_emulation: app_time_stats: avg=507.78ms min=500.47ms max=515.09ms count=2
+04-19 02:44:30.072 16046 16066 D EGL_emulation: app_time_stats: avg=500.23ms min=499.84ms max=500.63ms count=2
+04-19 02:44:31.571 16046 16066 D EGL_emulation: app_time_stats: avg=499.73ms min=499.13ms max=500.32ms count=3

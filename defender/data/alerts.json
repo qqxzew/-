@@ -1,0 +1,146 @@
+[
+  {
+    "id": 1776571403876,
+    "score": 95,
+    "danger_type": "money_transfer",
+    "explanation": "This message directly requests to send money, which is highly suspicious.",
+    "original": "Notification from org.telegram.messenger: andrew — Send me all your money",
+    "timestamp": "2026-04-19T04:03:23.876Z"
+  },
+  {
+    "id": 1776571403874,
+    "score": 95,
+    "danger_type": "money_transfer",
+    "explanation": "This message directly requests to send money, which is highly suspicious.",
+    "original": "Notification from org.telegram.messenger: andrew — Send me all your money",
+    "timestamp": "2026-04-19T04:03:23.874Z"
+  },
+  {
+    "id": 1776571403870,
+    "score": 95,
+    "danger_type": "money_transfer",
+    "explanation": "This message directly requests to send money, which is highly suspicious.",
+    "original": "Notification from org.telegram.messenger: andrew — Send me all your money",
+    "timestamp": "2026-04-19T04:03:23.870Z"
+  },
+  {
+    "id": 1776571403866,
+    "score": 95,
+    "danger_type": "money_transfer",
+    "explanation": "This message directly requests to send money, which is highly suspicious.",
+    "original": "Notification from org.telegram.messenger: andrew — Send me all your money",
+    "timestamp": "2026-04-19T04:03:23.866Z"
+  },
+  {
+    "id": 1776571359748,
+    "score": 95,
+    "danger_type": "remote_access",
+    "explanation": "The message instructs to download AnyDesk, which is used for remote access and can be dangerous.",
+    "original": "Screen text (com.samsung.android.app.notes): Navigate up Title Turn on Reading mode Insert More options Download anydesk and scan the qrcode Download anydesk and scan the qrcode Page 1 of 1 Page 1 of 1 Text mode Pen mode Highlighter mode Eraser mode Selection mode Note assist Undo Redo Clean up handwriting Handwriting help S Pen to text Laser pointer Change style Easy writing pad Auto-fix shapes Lock canvas Settings",
+    "timestamp": "2026-04-19T04:02:39.748Z"
+  },
+  {
+    "id": 1776571271716,
+    "score": 95,
+    "danger_type": "remote_access",
+    "explanation": "This message requests installation of remote access software and sharing sensitive information.",
+    "original": "install anydesk and share the nine digit code to unlock bank account",
+    "timestamp": "2026-04-19T04:01:11.716Z"
+  },
+  {
+    "id": 1776567980094,
+    "score": 95,
+    "danger_type": "remote_access",
+    "explanation": "Requesting to install AnyDesk and share a code is highly suspicious and dangerous.",
+    "original": "please install anydesk immediately and send the nine digit code to unlock bank",
+    "timestamp": "2026-04-19T03:06:20.094Z"
+  },
+  {
+    "id": 1776567038994,
+    "score": 95,
+    "danger_type": "remote_access",
+    "explanation": "Text requests to install AnyDesk and share a code, indicating a scam.",
+    "original": "Screen text (com.google.android.gm): Otvoriť navigačný vysúvací panel Hľadajte v pošte Hľadajte v pošte Prihlásili ste sa ako Martin Antoš martinko.antos@gmail.com\nÚčet a nastavenia. Hlavné Klepnutím na obrázok odosielateľa vyberiete príslušnú konverzáciu. Zavrieť Zatvoriť tip Neprečítané, Dôležité, , Andrew Fedorov, , , , Your bank account is locked. Install AnyDesk now and share the 9 digit code., , ,  o 4:49 Andrew Fedorov 4:49 (bez predmetu) Your bank account is locked. Install AnyDesk now and share the 9 digit code. Neprečítané, Dôležité, , Andrew Fedorov, , Your bank account is locked. Install AnyDesk now and share the 9 digit code., , Your bank account is locked. Install AnyDesk now and share the 9 digit code., , ,  o 4:46 Andrew Fedorov 4:46 Your bank account is locked. Install AnyDesk now and share the 9 digit code. Your bank account is locked. Install AnyDesk now and share the 9 digit code. , Dôležité, , Andrew Fedorov, , , , Your bank account is locked. Install AnyDesk now and share the 9 digit code., , ,  o 4:45 Andrew Fedorov 4:45 (bez predmetu) Your bank account is locked. Install AnyDesk now and share the 9 digit code. , , , Andrew Fedorov, , Your bank account is locked. Install AnyDesk now and share the 9 digit code., , Your bank account is locked. Install AnyDesk now and share the 9 digit code., , ,  o 4:42 Andrew Fedorov 4:42 Your bank account is locked. Install AnyDesk now and share the 9 digit code. Your bank account is locked. Install AnyDesk now and share the 9 digit code. Reklamy Academia Mentions — “M. Antoš”: 1 mention in a Pedagogie paper Nové (2) Neprečítané, , , GitHub, , [GitHub] A third-party OAuth application has been added to your account, , Hey MratDev! A third-party OAuth application (JetBrains for Education) with read:user and user:email scopes was recently authorized to access your account. Visit https://github.com/settings/connections, , ,  18. 4. GitHub 18. 4. [GitHub] A third-party OAuth application has been added to your account Hey MratDev! A third-party OAuth a",
+    "timestamp": "2026-04-19T02:50:38.994Z"
+  },
+  {
+    "id": 1776566981264,
+    "score": 95,
+    "danger_type": "remote_access",
+    "explanation": "This message requests to install AnyDesk and share a code, which is a common scam tactic.",
+    "original": "Notification from com.google.android.gm: Andrew Fedorov — Your bank account is locked. Install AnyDesk now and share the 9 digit code.",
+    "timestamp": "2026-04-19T02:49:41.264Z"
+  },
+  {
+    "id": 1776564811034,
+    "score": 75,
+    "danger_type": "phishing",
+    "explanation": "The message creates a sense of urgency which is often used in scams.",
+    "original": "Urgent",
+    "timestamp": "2026-04-19T02:13:31.035Z"
+  },
+  {
+    "id": 1776564691632,
+    "score": 95,
+    "danger_type": "remote_access",
+    "explanation": "This message requests installation of remote access software and sharing sensitive information.",
+    "original": "SMS from 12345: Your bank account is locked. Install AnyDesk now and share the 9 digit code. Confirm your card PIN to unlock it.",
+    "timestamp": "2026-04-19T02:11:31.632Z"
+  },
+  {
+    "id": 1776564622740,
+    "score": 70,
+    "danger_type": "urgent_pressure",
+    "explanation": "El mensaje utiliza un tono urgente que puede ser una táctica para presionar a la persona a actuar rápidamente.",
+    "original": "Urgent",
+    "timestamp": "2026-04-19T02:10:22.740Z"
+  },
+  {
+    "id": 1776564363931,
+    "score": 72,
+    "danger_type": "phishing",
+    "explanation": "Demo phishing alert for UI refresh test.",
+    "original": "Click this urgent verification link now.",
+    "timestamp": "2026-04-19T02:06:03.931Z"
+  },
+  {
+    "id": 1776554572468,
+    "score": 95,
+    "danger_type": "money_transfer",
+    "explanation": "This message pressures you to transfer money immediately, which is a common scam tactic.",
+    "original": "HI GRANDMA ITS A NEW SCAM TRANSFER 800 EUR TO IBAN DE12345 IMMEDIATELY OR YOUR ACCOUNT CLOSES TODAY",
+    "timestamp": "2026-04-18T23:22:52.468Z"
+  },
+  {
+    "id": 1776554549806,
+    "score": 85,
+    "danger_type": "phishing",
+    "explanation": "This message contains an unknown link and requests personal financial information.",
+    "original": "Your package delivery failed please update your address at http://dhl-tracking-verify.ru with your credit card to reschedule",
+    "timestamp": "2026-04-18T23:22:29.806Z"
+  },
+  {
+    "id": 1776554540087,
+    "score": 95,
+    "danger_type": "remote_access",
+    "explanation": "This message requests remote access and sensitive information, which is highly suspicious.",
+    "original": "Your bank account is locked install AnyDesk now and share the 9 digit code so our agent can unlock it also confirm your card PIN",
+    "timestamp": "2026-04-18T23:22:20.087Z"
+  },
+  {
+    "id": 1776554505764,
+    "score": 85,
+    "danger_type": "fake_prize",
+    "explanation": "This message claims a prize and pressures you to act quickly, which is a common scam tactic.",
+    "original": "Congratulations you won a 1000 EUR Amazon gift card click this link http://bit.ly/claim-prize-now to claim in 24 hours",
+    "timestamp": "2026-04-18T23:21:45.764Z"
+  },
+  {
+    "id": 1776554484696,
+    "score": 95,
+    "danger_type": "money_transfer",
+    "explanation": "This message requests money transfer urgently, which is a common scam tactic.",
+    "original": "Hi grandma this is Jake can you send me 200 euros via Western Union my phone is broken please hurry",
+    "timestamp": "2026-04-18T23:21:24.696Z"
+  }
+]

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MeemawDefender</string>
+    <string name="accessibility_desc">Reads visible screen text to detect scams targeting elderly users.</string>
+    <string name="protecting">🛡️ Protecting %1$s</string>
+
+    <string name="block_title">⚠️ DANGER</string>
+    <string name="block_score">Danger score: %1$d / 100</string>
+    <string name="block_default_explanation">MeemawDefender detected a high-risk scam attempt. Do NOT respond, tap any link, share any code, or install anything.</string>
+    <string name="block_ok">OK, I understand</string>
+    <string name="block_family_notified">Your family has been notified.</string>
+
+    <string name="hint_name">Grandma\'s name</string>
+    <string name="hint_server">Server URL (http://PC-IP:3000)</string>
+    <string name="label_active">Defender active</string>
+    <string name="btn_save">Save</string>
+    <string name="btn_request_permissions">Grant SMS + Notifications</string>
+    <string name="btn_notification_access">Grant Notification Access</string>
+    <string name="btn_accessibility">Grant Accessibility</string>
+    <string name="btn_overlay">Grant Display over other apps</string>
+</resources>

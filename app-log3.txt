@@ -1,0 +1,93 @@
+--------- beginning of main
+04-19 02:46:47.779 16046 16046 I ImeTracker: com.meemaw.assist:c7199e12: onRequestHide at ORIGIN_CLIENT_HIDE_SOFT_INPUT reason HIDE_SOFT_INPUT
+04-19 02:46:47.820 16046 16422 D TransportRuntime.SQLiteEventStore: Storing event with priority=DEFAULT, name=FIREBASE_ML_SDK for destination cct
+04-19 02:46:47.823 16046 16577 D DecoupledTextDelegate: Start loading thick OCR module.
+04-19 02:46:47.824 16046 16577 I DynamiteModule: Considering local module com.google.mlkit.dynamite.text.latin:10000 and remote module com.google.mlkit.dynamite.text.latin:0
+04-19 02:46:47.824 16046 16577 I DynamiteModule: Selected local version of com.google.mlkit.dynamite.text.latin
+04-19 02:46:47.833 16046 16422 D TransportRuntime.JobInfoScheduler: Scheduling upload for context TransportContext(cct, DEFAULT, MSRodHRwczovL2ZpcmViYXNlbG9nZ2luZy5nb29nbGVhcGlzLmNvbS92MGNjL2xvZy9iYXRjaD9mb3JtYXQ9anNvbl9wcm90bzNc) with jobId=-568253420 in 887174ms(Backend next call timestamp 1776560495007). Attempt 1
+04-19 02:46:47.845 16046 16422 D TransportRuntime.SQLiteEventStore: Storing event with priority=VERY_LOW, name=FIREBASE_ML_SDK for destination cct
+04-19 02:46:47.848 16046 16046 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=falsecallback=ImeCallback=ImeOnBackInvokedCallback@180171510 Callback=android.window.IOnBackInvokedCallback$Stub$Proxy@c5deb29
+04-19 02:46:47.853 16046 16422 D TransportRuntime.JobInfoScheduler: Upload for context TransportContext(cct, VERY_LOW, MSRodHRwczovL2ZpcmViYXNlbG9nZ2luZy5nb29nbGVhcGlzLmNvbS92MGNjL2xvZy9iYXRjaD9mb3JtYXQ9anNvbl9wcm90bzNc) is already scheduled. Returning...
+04-19 02:46:47.854 16046 16578 I native  : I0000 00:00:1776559607.854141   16578 asset_manager_util.cc:61] Created global reference to asset manager.
+04-19 02:46:47.869 16046 16579 I native  : I0000 00:00:1776559607.869322   16579 text_detector_thread_pool_context.cc:38] Compute manager max in flight region detector overwrite: 1
+04-19 02:46:47.871 16046 16422 D TransportRuntime.SQLiteEventStore: Storing event with priority=VERY_LOW, name=FIREBASE_ML_SDK for destination cct
+04-19 02:46:47.877 16046 16580 I native  : I0000 00:00:1776559607.877610   16580 text_classifier.cc:32] Creating classifier TfliteTextClassifier
+04-19 02:46:47.881 16046 16580 I native  : I0000 00:00:1776559607.881409   16580 common_util.h:41] Resizing Thread Pool: ocr_segm to 3
+04-19 02:46:47.885 16046 16580 I native  : I0000 00:00:1776559607.885367   16580 tflite_lstm_client_base.cc:371] Resizing interpreter pool to 4
+04-19 02:46:47.885 16046 16579 I native  : I0000 00:00:1776559607.885952   16579 common_util.h:41] Resizing Thread Pool: ocr_det_0 to 3
+04-19 02:46:47.895 16046 16579 I tflite  : Replacing 44 out of 46 node(s) with delegate (TfLiteXNNPackDelegate) node, yielding 3 partitions for the whole graph.
+04-19 02:46:47.896 16046 16579 I native  : I0000 00:00:1776559607.896322   16579 tflite_detector_client_with_shape_cache.cc:105] Caching size: 10
+04-19 02:46:47.907 16046 16422 D TransportRuntime.JobInfoScheduler: Upload for context TransportContext(cct, VERY_LOW, MSRodHRwczovL2ZpcmViYXNlbG9nZ2luZy5nb29nbGVhcGlzLmNvbS92MGNjL2xvZy9iYXRjaD9mb3JtYXQ9anNvbl9wcm90bzNc) is already scheduled. Returning...
+04-19 02:46:47.917 16046 16580 I native  : I0000 00:00:1776559607.917254   16580 multi_pass_line_recognition_mutator.cc:342] Preloading recognizers.
+04-19 02:46:47.918 16046 16440 I native  : I0000 00:00:1776559607.918057   16440 tflite_model_pooled_runner.cc:625] Loading mlkit-google-ocr-models/gocr/gocr_models/line_recognition_legacy_mobile/Latn_ctc/optical/conv_model.fb
+04-19 02:46:47.918 16046 16579 I native  : I0000 00:00:1776559607.918441   16579 tflite_model_pooled_runner.cc:625] Loading mlkit-google-ocr-models/gocr/layout/line_splitting_custom_ops/model.tflite
+04-19 02:46:47.918 16046 16440 I native  : I0000 00:00:1776559607.918728   16440 tflite_model_pooled_runner.cc:636] Loading mlkit-google-ocr-models/gocr/gocr_models/line_recognition_legacy_mobile/Latn_ctc/optical/lstm_model.fb
+04-19 02:46:47.921 16046 16579 I native  : I0000 00:00:1776559607.919815   16579 tflite_model_pooled_runner.cc:836] Resizing interpreter pool to 1
+04-19 02:46:47.922 16046 16440 I native  : I0000 00:00:1776559607.922493   16440 tflite_model_pooled_runner.cc:836] Resizing interpreter pool to 4
+04-19 02:46:47.922 16046 16579 I native  : I0000 00:00:1776559607.922590   16579 tflite_model_pooled_runner.cc:625] Loading mlkit-google-ocr-models/gocr/layout/line_clustering_custom_ops/model.tflite
+04-19 02:46:47.922 16046 16579 I native  : I0000 00:00:1776559607.922958   16579 tflite_model_pooled_runner.cc:836] Resizing interpreter pool to 1
+04-19 02:46:47.924 16046 16440 I native  : I0000 00:00:1776559607.924262   16440 mobile_langid_v2.cc:58] MobileLangID V2 initialized.
+04-19 02:46:47.924 16046 16440 I native  : I0000 00:00:1776559607.924316   16440 multi_pass_line_recognition_mutator.cc:364] Finished preloading a recognizer for "Latn"
+04-19 02:46:47.924 16046 16580 I native  : I0000 00:00:1776559607.924402   16580 multi_pass_line_recognition_mutator.cc:398] Finished preloading recognizers.
+04-19 02:46:47.926 16046 16578 D PipelineManager: Start process bitmap
+04-19 02:46:47.948 16046 16579 I tflite  : Replacing 44 out of 46 node(s) with delegate (TfLiteXNNPackDelegate) node, yielding 3 partitions for the whole graph.
+04-19 02:46:47.966 16046 16579 I tflite  : Replacing 44 out of 46 node(s) with delegate (TfLiteXNNPackDelegate) node, yielding 3 partitions for the whole graph.
+04-19 02:46:47.979 16046 16046 I ImeTracker: com.meemaw.assist:9d137004: onRequestHide at ORIGIN_CLIENT_HIDE_SOFT_INPUT reason HIDE_SOFT_INPUT_BY_INSETS_API
+04-19 02:46:47.981 16046 16046 I ImeTracker: com.meemaw.assist:c7199e12: onHidden
+04-19 02:46:48.014 16046 16579 I tflite  : Replacing 44 out of 46 node(s) with delegate (TfLiteXNNPackDelegate) node, yielding 3 partitions for the whole graph.
+04-19 02:46:48.164 16046 16579 I tflite  : Replacing 44 out of 46 node(s) with delegate (TfLiteXNNPackDelegate) node, yielding 3 partitions for the whole graph.
+04-19 02:46:48.167 16046 16579 I tflite  : Replacing 44 out of 46 node(s) with delegate (TfLiteXNNPackDelegate) node, yielding 3 partitions for the whole graph.
+04-19 02:46:48.185 16046 16578 D PipelineManager: OCR process succeeded via visionkit pipeline.
+04-19 02:46:48.189 16046 16422 D TransportRuntime.SQLiteEventStore: Storing event with priority=VERY_LOW, name=FIREBASE_ML_SDK for destination cct
+04-19 02:46:48.195 16046 16422 D TransportRuntime.JobInfoScheduler: Upload for context TransportContext(cct, VERY_LOW, MSRodHRwczovL2ZpcmViYXNlbG9nZ2luZy5nb29nbGVhcGlzLmNvbS92MGNjL2xvZy9iYXRjaD9mb3JtYXQ9anNvbl9wcm90bzNc) is already scheduled. Returning...
+04-19 02:46:48.209 16046 16422 D TransportRuntime.SQLiteEventStore: Storing event with priority=VERY_LOW, name=FIREBASE_ML_SDK for destination cct
+04-19 02:46:48.220 16046 16422 D TransportRuntime.JobInfoScheduler: Upload for context TransportContext(cct, VERY_LOW, MSRodHRwczovL2ZpcmViYXNlbG9nZ2luZy5nb29nbGVhcGlzLmNvbS92MGNjL2xvZy9iYXRjaD9mb3JtYXQ9anNvbl9wcm90bzNc) is already scheduled. Returning...
+04-19 02:46:48.787 16046 16066 D EGL_emulation: app_time_stats: avg=32.57ms min=1.20ms max=477.81ms count=33
+04-19 02:46:49.805 16046 16066 D EGL_emulation: app_time_stats: avg=509.10ms min=500.90ms max=517.30ms count=2
+04-19 02:46:49.816 16046 16070 D LLMRepository: Raw show-me LLM response: {
+04-19 02:46:49.816 16046 16070 D LLMRepository:   "message": "I can circle the house for you. It's the main green structure with a brown roof and a purple door.",
+04-19 02:46:49.816 16046 16070 D LLMRepository:   "annotate": "Draw a red circle around the green house with the brown roof and purple door."
+04-19 02:46:49.816 16046 16070 D LLMRepository: }
+04-19 02:46:49.942 16046 16070 E LLMRepository: annotate failed: 404 {
+04-19 02:46:49.942 16046 16070 E LLMRepository:   "error": {
+04-19 02:46:49.942 16046 16070 E LLMRepository:     "code": 404,
+04-19 02:46:49.942 16046 16070 E LLMRepository:     "message": "models/gemini-2.5-flash-image-preview is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.",
+04-19 02:46:49.942 16046 16070 E LLMRepository:     "status": "NOT_FOUND"
+04-19 02:46:49.942 16046 16070 E LLMRepository:   }
+04-19 02:46:49.942 16046 16070 E LLMRepository: }
+04-19 02:46:50.806 16046 16066 D EGL_emulation: app_time_stats: avg=111.08ms min=10.16ms max=502.20ms count=9
+04-19 02:46:52.304 16046 16066 D EGL_emulation: app_time_stats: avg=499.19ms min=498.19ms max=500.24ms count=3
+04-19 02:46:53.804 16046 16066 D EGL_emulation: app_time_stats: avg=500.04ms min=499.16ms max=500.61ms count=3
+04-19 02:46:54.821 16046 16066 D EGL_emulation: app_time_stats: avg=508.48ms min=500.64ms max=516.31ms count=2
+04-19 02:46:55.821 16046 16066 D EGL_emulation: app_time_stats: avg=500.23ms min=499.40ms max=501.06ms count=2
+04-19 02:46:56.822 16046 16066 D EGL_emulation: app_time_stats: avg=499.90ms min=498.29ms max=501.51ms count=2
+04-19 02:46:57.822 16046 16066 D EGL_emulation: app_time_stats: avg=500.13ms min=498.31ms max=501.95ms count=2
+04-19 02:46:59.338 16046 16066 D EGL_emulation: app_time_stats: avg=505.35ms min=498.09ms max=517.84ms count=3
+04-19 02:47:00.838 16046 16066 D EGL_emulation: app_time_stats: avg=499.88ms min=498.86ms max=500.72ms count=3
+04-19 02:47:01.838 16046 16066 D EGL_emulation: app_time_stats: avg=500.27ms min=499.85ms max=500.70ms count=2
+04-19 02:47:02.838 16046 16066 D EGL_emulation: app_time_stats: avg=500.02ms min=498.71ms max=501.33ms count=2
+04-19 02:47:03.854 16046 16066 D EGL_emulation: app_time_stats: avg=507.70ms min=498.28ms max=517.12ms count=2
+04-19 02:47:04.855 16046 16066 D EGL_emulation: app_time_stats: avg=500.33ms min=500.15ms max=500.52ms count=2
+04-19 02:47:05.855 16046 16066 D EGL_emulation: app_time_stats: avg=500.42ms min=498.23ms max=502.62ms count=2
+04-19 02:47:07.355 16046 16066 D EGL_emulation: app_time_stats: avg=499.86ms min=497.24ms max=501.43ms count=3
+04-19 02:47:08.371 16046 16066 D EGL_emulation: app_time_stats: avg=507.86ms min=497.52ms max=518.20ms count=2
+04-19 02:47:09.870 16046 16066 D EGL_emulation: app_time_stats: avg=499.77ms min=499.43ms max=500.16ms count=3
+04-19 02:47:10.871 16046 16066 D EGL_emulation: app_time_stats: avg=500.23ms min=499.72ms max=500.74ms count=2
+04-19 02:47:11.887 16046 16066 D EGL_emulation: app_time_stats: avg=508.13ms min=499.86ms max=516.39ms count=2
+04-19 02:47:13.387 16046 16066 D EGL_emulation: app_time_stats: avg=499.88ms min=498.21ms max=500.84ms count=3
+04-19 02:47:14.388 16046 16066 D EGL_emulation: app_time_stats: avg=500.68ms min=500.50ms max=500.85ms count=2
+04-19 02:47:15.888 16046 16066 D EGL_emulation: app_time_stats: avg=500.00ms min=499.00ms max=500.55ms count=3
+04-19 02:47:16.905 16046 16066 D EGL_emulation: app_time_stats: avg=508.17ms min=500.07ms max=516.27ms count=2
+04-19 02:47:18.404 16046 16066 D EGL_emulation: app_time_stats: avg=499.85ms min=499.18ms max=500.39ms count=3
+04-19 02:47:19.405 16046 16066 D EGL_emulation: app_time_stats: avg=499.93ms min=499.21ms max=500.66ms count=2
+04-19 02:47:20.420 16046 16066 D EGL_emulation: app_time_stats: avg=507.43ms min=500.22ms max=514.65ms count=2
+04-19 02:47:21.920 16046 16066 D EGL_emulation: app_time_stats: avg=499.99ms min=499.60ms max=500.36ms count=3
+04-19 02:47:22.920 16046 16066 D EGL_emulation: app_time_stats: avg=499.93ms min=499.60ms max=500.26ms count=2
+04-19 02:47:23.922 16046 16066 D EGL_emulation: app_time_stats: avg=501.09ms min=500.23ms max=501.95ms count=2
+04-19 02:47:24.938 16046 16066 D EGL_emulation: app_time_stats: avg=507.99ms min=499.79ms max=516.18ms count=2
+04-19 02:47:26.438 16046 16066 D EGL_emulation: app_time_stats: avg=499.94ms min=499.55ms max=500.66ms count=3
+04-19 02:47:27.938 16046 16066 D EGL_emulation: app_time_stats: avg=499.84ms min=499.23ms max=500.21ms count=3
+04-19 02:47:28.954 16046 16066 D EGL_emulation: app_time_stats: avg=507.93ms min=499.54ms max=516.31ms count=2
+04-19 02:47:30.455 16046 16066 D EGL_emulation: app_time_stats: avg=500.17ms min=499.14ms max=501.20ms count=3
+04-19 02:47:31.953 16046 16066 D EGL_emulation: app_time_stats: avg=499.37ms min=497.93ms max=500.86ms count=3
+04-19 02:47:33.003 16046 16066 D EGL_emulation: app_time_stats: avg=525.03ms min=500.16ms max=549.89ms count=2

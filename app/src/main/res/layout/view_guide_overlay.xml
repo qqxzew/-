@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:background="@drawable/bg_guide_overlay"
+    android:elevation="14dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="18dp"
+        android:paddingTop="12dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="12dp">
+
+        <View
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/bg_guide_dot" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvGuideTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:letterSpacing="0.01"
+                android:textColor="@color/on_primary"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                tools:text="Turn on Wi-Fi" />
+
+            <TextView
+                android:id="@+id/tvGuideBody"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:textColor="#E8E0D2"
+                android:textSize="13sp"
+                tools:text="Tap the Wi-Fi switch at the top of the screen." />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/btnGuideClose"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/guide_close_description"
+            android:padding="6dp"
+            android:src="@drawable/ic_close"
+            android:tint="#E8E0D2" />
+
+    </LinearLayout>
+
+</FrameLayout>

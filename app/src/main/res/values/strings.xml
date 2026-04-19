@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MeemawAssist</string>
+    <string name="hint_type_message">Type your question here…</string>
+    <string name="btn_send">Send</string>
+    <string name="btn_mic">Voice input</string>
+    <string name="btn_show_me">Show me with camera</string>
+    <string name="btn_remove_attachment">Remove photo</string>
+    <string name="open_chat_history">Open chat history</string>
+    <string name="new_chat">New chat</string>
+    <string name="status_listening">Listening…</string>
+    <string name="status_thinking">Thinking…</string>
+    <string name="status_fixing">Fixing…</string>
+    <string name="status_reading_photo">Reading photo…</string>
+    <string name="status_done">Done ✓</string>
+    <string name="chat_history_title">Chat History</string>
+    <string name="chat_history_subtitle">Open an old chat or start a new one.</string>
+    <string name="chat_history_empty">No chat history yet.</string>
+    <string name="history_label_you">You</string>
+    <string name="history_label_assistant">Meemaw</string>
+    <string name="history_label_photo">Photo reply</string>
+    <string name="history_label_warning">Warning</string>
+    <string name="scam_warning">⚠️ This looks like a scam.\nDo not do anything.\nCall your family immediately.</string>
+    <string name="welcome_message">Hello! I\'m MeemawAssist. How can I help you today?</string>
+    <string name="error_generic">Sorry, something went wrong. Please try again.</string>
+    <string name="accessibility_service_description">MeemawAssist uses accessibility to help fix phone problems automatically.</string>
+    <string name="show_me_default_prompt">Show me this</string>
+    <string name="photo_attachment_ready">Photo attached</string>
+    <string name="hint_photo_description">Add a note for this photo…</string>
+    <string name="photo_attachment_preview">Attached photo preview</string>
+    <string name="guide_close_description">Close the guide</string>
+</resources>

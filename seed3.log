@@ -1,0 +1,35 @@
+C:\Users\fandr\Desktop\HACK V2\add_contact.sh: 1 file pushed, 0 skipped. 0.4 MB/s (641 bytes in 0.002s)
+adding Mom +14155550111
+adding Dad +14155550112
+adding Son +14155550113
+adding Daughter +14155550114
+adding Husband +14155550115
+adding Wife +14155550116
+adding Brother +14155550117
+adding Sister +14155550118
+adding Grandson +14155550119
+adding Granddaughter +14155550120
+adding Best Friend +14155550121
+adding Neighbor +14155550122
+adding Doctor Smith +14155550123
+adding Pharmacy +14155550124
+adding Emergency 911
+adding Test +14155550199
+---
+Final contacts on device:
+Row: 0 display_name=Mom
+Row: 1 display_name=Dad
+Row: 2 display_name=Son
+Row: 3 display_name=Daughter
+Row: 4 display_name=Husband
+Row: 5 display_name=Wife
+Row: 6 display_name=Brother
+Row: 7 display_name=Sister
+Row: 8 display_name=Grandson
+Row: 9 display_name=Granddaughter
+Row: 10 display_name=Best Friend
+Row: 11 display_name=Neighbor
+Row: 12 display_name=Doctor Smith
+Row: 13 display_name=Pharmacy
+Row: 14 display_name=Emergency
+Row: 15 display_name=Test

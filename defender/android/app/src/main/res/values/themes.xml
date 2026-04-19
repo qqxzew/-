@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.MeemawDefender" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/red_primary</item>
+        <item name="colorPrimaryVariant">@color/red_dark</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorSecondary">@color/red_primary</item>
+        <item name="android:windowBackground">@color/bg</item>
+        <item name="android:statusBarColor">@color/red_primary</item>
+    </style>
+
+    <style name="Theme.MeemawDefender.Block" parent="Theme.MeemawDefender">
+        <item name="android:windowBackground">@color/red_primary</item>
+        <item name="android:statusBarColor">@color/red_dark</item>
+        <item name="android:navigationBarColor">@color/red_dark</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+</resources>

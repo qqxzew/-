@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/scam_warning_bg" />
+    <stroke android:width="2dp" android:color="@color/scam_warning" />
+    <corners
+        android:topLeftRadius="6dp"
+        android:topRightRadius="28dp"
+        android:bottomLeftRadius="28dp"
+        android:bottomRightRadius="28dp" />
+</shape>
