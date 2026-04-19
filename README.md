@@ -109,3 +109,76 @@ BIND_ACCESSIBILITY_SERVICE
 2. Открыть проект в Android Studio
 3. Sync Gradle → Run
 4. На устройстве: **Настройки → Специальные возможности → MeemawAssist** — включить
+
+---
+
+## 🛡️ MeemawDefender
+
+**Фоновый сервис защиты от мошенников** — анализирует SMS, уведомления и текст на экране в реальном времени с помощью GPT-4o-mini.
+
+### Как работает
+
+| Источник | Триггер |
+|----------|---------|
+| **ScreenMonitor** | AccessibilityService читает текст на экране каждые 4 секунды |
+| **NotificationReceiver** | Перехватывает все входящие уведомления (SMS, Gmail, мессенджеры) |
+| **SmsReceiver** | BroadcastReceiver на входящие SMS |
+
+При обнаружении угрозы — показывает красный экран-блокировку и отправляет алерт на дашборд.
+
+### Dashboard (Node.js + MongoDB Atlas)
+
+```
+cd defender
+node server.js   # http://localhost:3000
+```
+
+Для доступа извне — ngrok:
+```
+ngrok http 3000
+```
+
+### MongoDB Atlas интеграция
+
+Все алерты хранятся в **MongoDB Atlas** (облако):
+
+| Функция | Описание |
+|---------|----------|
+| **TTL Index** | Алерты автоматически удаляются через 30 дней |
+| **Aggregation Pipeline** | `GET /api/analytics` — статистика угроз по типу, avg/max score |
+| **Full-text Search** | `GET /api/search?q=anydesk` — поиск по всем алертам |
+| **Upsert Config** | Настройки (email, имя) хранятся как singleton-документ |
+
+Настройка `.env` в папке `defender/`:
+```
+MONGODB_URI=mongodb+srv://user:password@cluster0.xxxxx.mongodb.net/meemawdefender
+```
+
+### API эндпоинты
+
+| Метод | URL | Описание |
+|-------|-----|----------|
+| `GET` | `/api/ping` | Heartbeat от Android-приложения |
+| `GET` | `/api/status` | Статус подключения (30s таймаут) |
+| `POST` | `/api/alert` | Новый алерт с телефона |
+| `GET` | `/api/alerts` | Последние 10 алертов |
+| `GET` | `/api/analytics` | Статистика по типам угроз (Atlas Aggregation) |
+| `GET` | `/api/search?q=` | Поиск по алертам |
+| `GET/POST` | `/api/settings` | Настройки (email, имя, активность) |
+
+### Настройка Android → Dashboard (USB)
+
+```powershell
+adb reverse tcp:3000 tcp:3000
+adb shell am start -n com.meemaw.defender/.MainActivity
+# В приложении: Server URL = http://127.0.0.1:3000 → Save
+```
+
+### Тест без SMS
+
+```powershell
+adb shell "am broadcast -n com.meemaw.defender/.TestTriggerReceiver \
+  -a com.meemaw.defender.DEMO \
+  --es text 'install anydesk and share the nine digit code' \
+  --es source sms"
+```
