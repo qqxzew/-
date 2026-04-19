@@ -15,28 +15,32 @@
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
   :root {
-    --red:        #E53935;
-    --red-glow:   rgba(229,57,53,.25);
+    --red:        #ff4d4f;
+    --red-glow:   rgba(255,77,79,.28);
+    --red-deep:   #c62828;
     --red-dim:    #b71c1c;
     --orange:     #FB8C00;
     --yellow:     #FDD835;
     --green:      #43A047;
-    --bg:         #0e0e12;
-    --surface:    #18181f;
-    --surface2:   #22222c;
-    --border:     #2a2a36;
-    --text:       #e8e6e3;
-    --text-dim:   #8b8994;
+    --bg:         #0b0b10;
+    --bg-grad:    radial-gradient(1200px 600px at 50% -10%, #1a0f17 0%, transparent 60%), radial-gradient(900px 500px at 90% 120%, #140d1c 0%, transparent 55%), #0b0b10;
+    --surface:    rgba(24,24,31,.72);
+    --surface2:   rgba(34,34,44,.7);
+    --border:     rgba(255,255,255,.08);
+    --border-strong: rgba(255,255,255,.14);
+    --text:       #ececf1;
+    --text-dim:   #9896a3;
     --font-head:  'Space Grotesk', sans-serif;
     --font-body:  'DM Sans', sans-serif;
-    --radius:     14px;
+    --radius:     18px;
   }
 
   html { font-size: 18px; }
 
   body {
     font-family: var(--font-body);
-    background: var(--bg);
+    background: var(--bg-grad);
+    background-attachment: fixed;
     color: var(--text);
     min-height: 100vh;
     line-height: 1.55;
@@ -88,18 +92,20 @@
 
   h1 {
     font-family: var(--font-head);
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: 700;
-    letter-spacing: -.02em;
-    background: linear-gradient(135deg, var(--red), #ff7043);
+    letter-spacing: -.025em;
+    background: linear-gradient(135deg, #fff 0%, #ffb4b5 55%, var(--red) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   .subtitle {
     color: var(--text-dim);
-    font-size: .85rem;
-    margin-top: .35rem;
+    font-size: .9rem;
+    margin-top: .4rem;
+    letter-spacing: .01em;
   }
 
   /* ── Status Badge ──────────────────────────────── */
@@ -129,23 +135,31 @@
 
   /* ── Cards ─────────────────────────────────────── */
   .card {
+    position: relative;
     background: var(--surface);
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    padding: 1.5rem;
-    margin-bottom: 1.25rem;
-    transition: border-color .25s;
+    padding: 1.6rem 1.5rem;
+    margin-bottom: 1.15rem;
+    transition: border-color .25s, transform .25s, box-shadow .25s;
+    box-shadow: 0 1px 0 rgba(255,255,255,.03) inset, 0 18px 40px -24px rgba(0,0,0,.6);
   }
-  .card:hover { border-color: rgba(229,57,53,.3); }
+  .card:hover {
+    border-color: var(--border-strong);
+    transform: translateY(-1px);
+  }
 
   .card-title {
     font-family: var(--font-head);
-    font-size: 1rem;
+    font-size: 1.02rem;
     font-weight: 600;
-    margin-bottom: 1rem;
+    letter-spacing: -.01em;
+    margin-bottom: 1.1rem;
     display: flex;
     align-items: center;
-    gap: .45rem;
+    gap: .5rem;
   }
 
   /* ── Form ──────────────────────────────────────── */
@@ -238,18 +252,50 @@
   .alert-empty {
     text-align: center;
     color: var(--text-dim);
-    padding: 2rem 0;
-    font-size: .85rem;
+    padding: 2.2rem 0;
+    font-size: .88rem;
+  }
+  .alert-empty::before {
+    content: '✓';
+    display: block;
+    font-size: 2rem;
+    color: var(--green);
+    margin-bottom: .4rem;
+    opacity: .7;
   }
 
   .alert-item {
+    position: relative;
     display: flex;
-    gap: .85rem;
-    padding: .85rem 0;
-    border-bottom: 1px solid var(--border);
+    gap: .95rem;
+    padding: 1rem 1rem 1rem .95rem;
+    margin-bottom: .7rem;
+    border-radius: 14px;
+    background: linear-gradient(180deg, rgba(255,255,255,.025), rgba(255,255,255,0));
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--yellow);
     animation: fadeUp .35s ease-out both;
+    transition: transform .2s, border-color .2s, background .2s;
   }
-  .alert-item:last-child { border-bottom: none; }
+  .alert-item:hover { transform: translateX(2px); border-color: var(--border-strong); }
+  .alert-item:last-child { margin-bottom: 0; }
+
+  .alert-item.sev-high {
+    border-left-color: var(--red);
+    background:
+      linear-gradient(180deg, rgba(255,77,79,.10), rgba(255,77,79,.02)),
+      linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0));
+    box-shadow: 0 0 0 1px rgba(255,77,79,.12), 0 10px 30px -18px rgba(255,77,79,.45);
+  }
+  .alert-item.sev-high::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 14px;
+    pointer-events: none;
+    background: radial-gradient(220px 80px at 0% 50%, rgba(255,77,79,.18), transparent 70%);
+  }
+  .alert-item.sev-med  { border-left-color: var(--orange); }
 
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(8px); }
@@ -258,48 +304,113 @@
 
   .score-badge {
     flex-shrink: 0;
-    width: 44px; height: 44px;
-    border-radius: 12px;
+    width: 52px; height: 52px;
+    border-radius: 14px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     font-family: var(--font-head);
     font-weight: 700;
-    font-size: .95rem;
+    font-size: 1.05rem;
+    line-height: 1;
     color: #fff;
+    box-shadow: 0 6px 16px -8px rgba(0,0,0,.6);
+  }
+  .score-badge small {
+    font-size: .55rem;
+    font-weight: 600;
+    letter-spacing: .14em;
+    margin-top: 3px;
+    opacity: .85;
   }
   .score-yellow { background: linear-gradient(135deg, #f9a825, #fdd835); color: #3e2723; }
   .score-orange { background: linear-gradient(135deg, #ef6c00, #fb8c00); }
-  .score-red    { background: linear-gradient(135deg, var(--red-dim), var(--red)); }
+  .score-red    {
+    background: linear-gradient(135deg, #c62828, #ff4d4f);
+    box-shadow: 0 0 0 1px rgba(255,77,79,.35), 0 8px 22px -6px rgba(255,77,79,.55);
+    animation: badgePulse 2.2s ease-in-out infinite;
+  }
+  @keyframes badgePulse {
+    0%,100% { box-shadow: 0 0 0 1px rgba(255,77,79,.35), 0 8px 22px -6px rgba(255,77,79,.55); }
+    50%     { box-shadow: 0 0 0 1px rgba(255,77,79,.55), 0 10px 28px -4px rgba(255,77,79,.8); }
+  }
 
-  .alert-body { flex: 1; min-width: 0; }
+  .alert-body { flex: 1; min-width: 0; position: relative; z-index: 1; }
+
+  .alert-head {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    flex-wrap: wrap;
+    margin-bottom: .35rem;
+  }
 
   .alert-type {
-    font-size: .72rem;
-    font-weight: 600;
+    font-size: .78rem;
+    font-weight: 700;
+    letter-spacing: .02em;
+    color: var(--text);
+  }
+
+  .danger-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: .3rem;
+    padding: .18rem .55rem;
+    font-family: var(--font-head);
+    font-size: .6rem;
+    font-weight: 700;
+    letter-spacing: .14em;
     text-transform: uppercase;
-    letter-spacing: .05em;
-    margin-bottom: .15rem;
+    border-radius: 99px;
+    background: rgba(253,216,53,.14);
+    color: var(--yellow);
+    border: 1px solid rgba(253,216,53,.3);
   }
+  .danger-chip.med  { background: rgba(251,140,0,.14); color: #ffb74d; border-color: rgba(251,140,0,.35); }
+  .danger-chip.high {
+    background: rgba(255,77,79,.18);
+    color: #ff8a8c;
+    border-color: rgba(255,77,79,.45);
+    box-shadow: 0 0 0 3px rgba(255,77,79,.08);
+  }
+  .danger-chip .dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: currentColor;
+    box-shadow: 0 0 8px currentColor;
+    animation: dotBlink 1.4s ease-in-out infinite;
+  }
+  @keyframes dotBlink { 50% { opacity: .35; } }
+
   .alert-explanation {
-    font-size: .82rem;
-    color: var(--text-dim);
-    line-height: 1.45;
+    font-size: .9rem;
+    color: var(--text);
+    line-height: 1.5;
   }
+  .alert-item.sev-high .alert-explanation { color: #ffe5e5; }
+
   .alert-original {
-    font-size: .75rem;
+    display: block;
+    font-size: .8rem;
+    font-family: 'DM Sans', sans-serif;
     color: var(--text-dim);
-    opacity: .65;
-    margin-top: .3rem;
+    margin-top: .55rem;
+    padding: .5rem .7rem;
+    background: rgba(0,0,0,.25);
+    border-left: 2px solid var(--border-strong);
+    border-radius: 6px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    font-style: italic;
   }
   .alert-time {
-    font-size: .68rem;
+    font-size: .7rem;
     color: var(--text-dim);
-    opacity: .5;
-    margin-top: .2rem;
+    opacity: .7;
+    margin-top: .45rem;
+    letter-spacing: .03em;
   }
 
   /* ── Toast ─────────────────────────────────────── */
@@ -390,7 +501,7 @@
       <input id="searchInput" type="text" placeholder="🔍 Search alerts…" style="width:100%;padding:10px 14px;background:var(--surface2);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:.85rem;outline:none" oninput="debounceSearch(this.value)">
     </div>
     <div id="searchResults" style="display:none;margin-bottom:16px"></div>
-    <div id="analyticsChart" style="display:flex;flex-wrap:wrap;gap:10px"></div>
+    <div id="analyticsChart" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px"></div>
     <div id="topThreat" style="margin-top:14px"></div>
   </div>
 
@@ -473,6 +584,24 @@ function scoreClass(score) {
   return 'score-yellow';
 }
 
+function severityClass(score) {
+  if (score >= 90) return 'sev-high';
+  if (score >= 61) return 'sev-med';
+  return 'sev-low';
+}
+
+function severityLabel(score) {
+  if (score >= 90) return { text: 'UNSAFE — DO NOT TRUST', cls: 'high' };
+  if (score >= 61) return { text: 'CAUTION — LIKELY UNSAFE', cls: 'med' };
+  return { text: 'HEADS UP',                         cls: 'low' };
+}
+
+function scoreLabel(score) {
+  if (score >= 90) return 'RISK';
+  if (score >= 61) return 'WARN';
+  return 'NOTE';
+}
+
 function dangerLabel(type) {
   const map = {
     money_transfer: '💸 Money Transfer',
@@ -505,17 +634,25 @@ function renderAlerts(alerts) {
     container.innerHTML = '<div class="alert-empty">No alerts yet — that\'s a good sign!</div>';
     return;
   }
-  container.innerHTML = alerts.map((a, i) => `
-    <div class="alert-item" style="animation-delay:${i * .06}s">
-      <div class="score-badge ${scoreClass(a.score)}">${a.score}</div>
+  container.innerHTML = alerts.map((a, i) => {
+    const sev = severityLabel(a.score);
+    return `
+    <div class="alert-item ${severityClass(a.score)}" style="animation-delay:${i * .06}s">
+      <div class="score-badge ${scoreClass(a.score)}">
+        ${a.score}
+        <small>${scoreLabel(a.score)}</small>
+      </div>
       <div class="alert-body">
-        <div class="alert-type">${dangerLabel(a.danger_type)}</div>
+        <div class="alert-head">
+          <span class="alert-type">${dangerLabel(a.danger_type)}</span>
+          <span class="danger-chip ${sev.cls}"><span class="dot"></span>${sev.text}</span>
+        </div>
         <div class="alert-explanation">${escapeHtml(a.explanation)}</div>
-        ${a.original ? `<div class="alert-original" title="${escapeHtml(a.original)}">${escapeHtml(a.original)}</div>` : ''}
+        ${a.original ? `<div class="alert-original" title="${escapeHtml(a.original)}">“${escapeHtml(a.original)}”</div>` : ''}
         <div class="alert-time">${timeAgo(a.timestamp)}</div>
       </div>
     </div>
-  `).join('');
+  `;}).join('');
 }
 
 /* ── Connection status ────────────────────────────── */
@@ -563,17 +700,20 @@ function renderAnalytics({ byType, topScore }) {
     return;
   }
   chart.innerHTML = byType.map(b => `
-    <div style="background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:12px 16px;min-width:140px;flex:1">
-      <div style="font-size:.75rem;color:var(--text-dim);margin-bottom:4px">${dangerLabel(b._id)}</div>
-      <div style="font-size:1.4rem;font-weight:700;font-family:var(--font-head)">${b.count}</div>
-      <div style="font-size:.72rem;color:var(--text-dim)">avg score: <b style="color:var(--text)">${Math.round(b.avgScore)}</b></div>
+    <div style="background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.01));border:1px solid var(--border);border-radius:12px;padding:14px 16px;transition:border-color .2s" onmouseover="this.style.borderColor='var(--border-strong)'" onmouseout="this.style.borderColor='var(--border)'">
+      <div style="font-size:.7rem;color:var(--text-dim);margin-bottom:6px;text-transform:uppercase;letter-spacing:.08em">${dangerLabel(b._id)}</div>
+      <div style="font-size:1.55rem;font-weight:700;font-family:var(--font-head);letter-spacing:-.02em">${b.count}</div>
+      <div style="font-size:.7rem;color:var(--text-dim);margin-top:2px">avg score · <b style="color:var(--text)">${Math.round(b.avgScore)}</b></div>
     </div>
   `).join('');
 
   const topEl = document.getElementById('topThreat');
   if (topScore) {
-    topEl.innerHTML = `<div style="font-size:.75rem;color:var(--text-dim);margin-bottom:4px">🏴 Highest risk alert ever — score <b style="color:#E53935">${topScore.score}</b></div>
-      <div style="font-size:.82rem;color:var(--text-dim);font-style:italic">${escapeHtml(topScore.original || topScore.explanation || '')}</div>`;
+    topEl.innerHTML = `
+      <div style="margin-top:18px;padding:14px 16px;border-radius:12px;border:1px solid rgba(255,77,79,.3);background:linear-gradient(135deg,rgba(255,77,79,.1),rgba(255,77,79,.02))">
+        <div style="font-size:.68rem;color:#ff8a8c;letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin-bottom:6px">⚠ Highest risk ever · score ${topScore.score}</div>
+        <div style="font-size:.88rem;color:var(--text);font-style:italic;line-height:1.4">“${escapeHtml(topScore.original || topScore.explanation || '')}”</div>
+      </div>`;
   }
 }
 

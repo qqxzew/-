@@ -4,9 +4,9 @@
     <string name="accessibility_desc">Reads visible screen text to detect scams targeting elderly users.</string>
     <string name="protecting">🛡️ Protecting %1$s</string>
 
-    <string name="block_title">⚠️ DANGER</string>
-    <string name="block_score">Danger score: %1$d / 100</string>
-    <string name="block_default_explanation">MeemawDefender detected a high-risk scam attempt. Do NOT respond, tap any link, share any code, or install anything.</string>
+    <string name="block_title">⚠️ Please pause</string>
+    <string name="block_score">Risk level: %1$d / 100</string>
+    <string name="block_default_explanation">This looks like a risky situation. Please take a moment and check with someone you trust before you continue.</string>
     <string name="block_ok">OK, I understand</string>
     <string name="block_family_notified">Your family has been notified.</string>
 

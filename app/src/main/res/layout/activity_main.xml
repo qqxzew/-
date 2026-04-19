@@ -82,7 +82,7 @@
             android:background="@color/background"
             android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:paddingHorizontal="14dp"
+            android:paddingHorizontal="8dp"
             android:paddingTop="10dp"
             android:paddingBottom="18dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -92,15 +92,15 @@
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnShowMe"
                 style="@style/Widget.Material3.Button.IconButton"
-                android:layout_width="64dp"
-                android:layout_height="64dp"
-                android:layout_marginEnd="6dp"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_marginEnd="2dp"
                 android:contentDescription="@string/btn_show_me"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
-                app:cornerRadius="32dp"
+                app:cornerRadius="28dp"
                 app:icon="@drawable/ic_camera"
-                app:iconSize="28dp"
+                app:iconSize="26dp"
                 app:iconTint="@color/on_surface"
                 app:rippleColor="@color/surface_muted"
                 app:strokeColor="@color/input_stroke"
@@ -109,26 +109,26 @@
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnMic"
                 style="@style/Widget.Material3.Button.IconButton.Filled"
-                android:layout_width="64dp"
-                android:layout_height="64dp"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
                 android:contentDescription="@string/btn_mic"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
                 app:backgroundTint="@color/surface_muted"
-                app:cornerRadius="32dp"
+                app:cornerRadius="28dp"
                 app:icon="@drawable/ic_mic"
-                app:iconSize="30dp"
+                app:iconSize="28dp"
                 app:iconTint="@color/on_surface" />
 
             <LinearLayout
                 android:id="@+id/inputContainer"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="10dp"
+                android:layout_marginHorizontal="6dp"
                 android:layout_weight="1"
                 android:background="@drawable/bg_input"
                 android:gravity="center_vertical"
-                android:minHeight="64dp"
+                android:minHeight="56dp"
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -195,29 +195,29 @@
                     android:background="@android:color/transparent"
                     android:hint="@string/hint_type_message"
                     android:inputType="textMultiLine|textCapSentences"
-                    android:lineSpacingExtra="4dp"
-                    android:maxLines="4"
+                    android:lineSpacingExtra="3dp"
+                    android:maxLines="5"
                     android:minHeight="56dp"
-                    android:paddingHorizontal="20dp"
-                    android:paddingVertical="14dp"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="12dp"
                     android:textColor="@color/on_surface"
                     android:textColorHint="@color/on_surface_secondary"
-                    android:textSize="20sp" />
+                    android:textSize="19sp" />
 
             </LinearLayout>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnSend"
                 style="@style/Widget.Material3.Button.IconButton.Filled"
-                android:layout_width="64dp"
-                android:layout_height="64dp"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
                 android:contentDescription="@string/btn_send"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
                 app:backgroundTint="@color/primary"
-                app:cornerRadius="32dp"
+                app:cornerRadius="28dp"
                 app:icon="@drawable/ic_send"
-                app:iconSize="28dp"
+                app:iconSize="26dp"
                 app:iconTint="@color/on_primary" />
 
         </LinearLayout>

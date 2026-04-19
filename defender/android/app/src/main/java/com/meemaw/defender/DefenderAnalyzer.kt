@@ -10,18 +10,18 @@ import okhttp3.RequestBody.Companion.toRequestBody
 import java.util.concurrent.TimeUnit
 
 /**
- * Sends text to OpenAI GPT-4o-mini and returns a structured danger assessment.
+ * Sends text to Google Gemini 2.5 Pro and returns a structured danger assessment.
  * Handles all errors gracefully — never throws.
  */
 object DefenderAnalyzer {
 
     private const val TAG = "DefenderAnalyzer"
-    private const val ENDPOINT = "https://api.openai.com/v1/chat/completions"
-    private const val MODEL = "gpt-4o-mini"
+    private const val BASE_URL = "https://generativelanguage.googleapis.com/v1beta/models/"
+    private const val MODEL = "gemini-2.5-flash-lite"
 
     private val client = OkHttpClient.Builder()
-        .connectTimeout(15, TimeUnit.SECONDS)
-        .readTimeout(30, TimeUnit.SECONDS)
+        .connectTimeout(5, TimeUnit.SECONDS)
+        .readTimeout(10, TimeUnit.SECONDS)
         .build()
 
     private val gson = Gson()
@@ -35,17 +35,26 @@ object DefenderAnalyzer {
         "safe"
     )
 
-    private const val SYSTEM_PROMPT = """You are a scam detector protecting an elderly person.
+    private const val SYSTEM_PROMPT = """You are a calm, user-friendly safety assistant that warns the user when a situation looks risky.
+
 Analyze the following text and return ONLY this JSON, no other text:
 {
   "score": 0-100,
   "danger_type": "money_transfer" | "remote_access" | "phishing" | "fake_prize" | "personal_data" | "safe",
-  "explanation": "one short sentence in the same language as the input text explaining why dangerous"
+  "explanation": "2-3 short, clear sentences in the SAME LANGUAGE as the input text, written directly to the user (use 'you'). Avoid harsh words like 'DANGER', 'SCAM', 'FRAUD', 'THREAT'. Describe what is happening in plain language and suggest a safe next step, e.g. 'please take a moment and check with someone you trust before continuing'. Keep the tone calm, respectful, and easy to understand."
 }
-Score 90-100: transfer money, install AnyDesk/TeamViewer, share SMS codes, give bank details.
-Score 61-89: unknown links, urgent pressure, prize claims, personal data requests.
-Score 40-60: mildly suspicious but unclear.
-Score 0-39: normal safe messages."""
+
+Scoring:
+- 90-100: sending money, sharing bank details / SMS codes, installing remote-control apps (AnyDesk/TeamViewer), giving card numbers, large transfers.
+- 61-89: unknown links, urgent pressure, prize claims, personal data requests.
+- 40-60: mildly suspicious but unclear.
+- 0-39: normal safe messages.
+
+Examples of good 'explanation' text (match this calm, plain tone):
+- "It looks like you are about to send a large amount of money. Please pause and double-check with someone you trust before continuing."
+- "This message is asking for your bank card details. That is usually not safe to share — please verify who is asking before you reply."
+- "This link may not be safe to open. Please take a moment to confirm the sender before tapping it."
+"""
 
     data class Result(
         val score: Int,
@@ -68,26 +77,34 @@ Score 0-39: normal safe messages."""
         val trimmed = text.trim()
         if (trimmed.length < 2) return safe(trimmed, source)
 
-        val apiKey = BuildConfig.OPENAI_API_KEY
+        val apiKey = BuildConfig.GEMINI_API_KEY
         if (apiKey.isBlank()) {
-            Log.w(TAG, "OPENAI_API_KEY missing — treating as safe")
+            Log.w(TAG, "GEMINI_API_KEY missing — treating as safe")
             return safe(trimmed, source)
         }
 
+        // Gemini generateContent schema
         val payload = mapOf(
-            "model" to MODEL,
-            "temperature" to 0,
-            "response_format" to mapOf("type" to "json_object"),
-            "messages" to listOf(
-                mapOf("role" to "system", "content" to SYSTEM_PROMPT),
-                mapOf("role" to "user",   "content" to trimmed)
+            "systemInstruction" to mapOf(
+                "parts" to listOf(mapOf("text" to SYSTEM_PROMPT))
+            ),
+            "contents" to listOf(
+                mapOf(
+                    "role" to "user",
+                    "parts" to listOf(mapOf("text" to trimmed))
+                )
+            ),
+            "generationConfig" to mapOf(
+                "temperature" to 0,
+                "responseMimeType" to "application/json",
+                "thinkingConfig" to mapOf("thinkingBudget" to 0),
+                "maxOutputTokens" to 200
             )
         )
         val body = gson.toJson(payload).toRequestBody("application/json".toMediaType())
 
         val req = Request.Builder()
-            .url(ENDPOINT)
-            .addHeader("Authorization", "Bearer $apiKey")
+            .url("${BASE_URL}${MODEL}:generateContent?key=$apiKey")
             .post(body)
             .build()
 
@@ -100,11 +117,14 @@ Score 0-39: normal safe messages."""
                 val raw = response.body?.string().orEmpty()
                 val content = JsonParser.parseString(raw)
                     .asJsonObject
-                    .getAsJsonArray("choices")
+                    .getAsJsonArray("candidates")
                     .firstOrNull()
                     ?.asJsonObject
-                    ?.getAsJsonObject("message")
-                    ?.get("content")?.asString
+                    ?.getAsJsonObject("content")
+                    ?.getAsJsonArray("parts")
+                    ?.firstOrNull()
+                    ?.asJsonObject
+                    ?.get("text")?.asString
                     .orEmpty()
 
                 parseResult(content, trimmed, source)

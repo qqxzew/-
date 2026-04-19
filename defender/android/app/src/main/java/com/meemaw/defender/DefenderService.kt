@@ -105,7 +105,7 @@ class DefenderService : Service() {
         pingJob = scope.launch {
             while (true) {
                 try { AlertSender.pingServer(this@DefenderService) } catch (_: Exception) {}
-                delay(15_000L)
+                delay(5_000L)
             }
         }
     }

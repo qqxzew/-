@@ -13,7 +13,31 @@ class ScreenMonitor : AccessibilityService() {
 
     private var lastText: String = ""
     private var lastAnalyzedAt: Long = 0
-    private val throttleMs = 4_000L  // at most one analysis per 4s per screen
+    private val throttleMs = 200L  // near-live: only de-duplicate rapid scroll events
+
+    // Only analyze screen content when the user is inside an SMS or email app.
+    // This keeps Defender from reacting to random apps (browsers, games, our own Assist chat, etc.).
+    private val allowedPackages = setOf(
+        // SMS / messaging
+        "com.google.android.apps.messaging",
+        "com.samsung.android.messaging",
+        "com.android.mms",
+        "com.textra",
+        // Email
+        "com.google.android.gm",
+        "com.samsung.android.email.provider",
+        "com.microsoft.office.outlook",
+        "com.yahoo.mobile.client.android.mail",
+        "ru.mail.mailapp",
+        "me.bluemail.mail",
+        "ch.protonmail.android"
+    )
+
+    // Never scan these — our own apps.
+    private val blockedPackages = setOf(
+        "com.meemaw.defender",
+        "com.meemaw.assist"
+    )
 
     override fun onAccessibilityEvent(event: AccessibilityEvent?) {
         if (event == null) return
@@ -27,7 +51,9 @@ class ScreenMonitor : AccessibilityService() {
 
         val root = rootInActiveWindow ?: return
         val pkg  = root.packageName?.toString().orEmpty()
-        if (pkg == packageName) return  // ignore our own UI
+
+        if (pkg in blockedPackages) return       // our own apps — never analyze
+        if (pkg !in allowedPackages) return      // only SMS / email apps
 
         val text = collectText(root).trim()
         if (text.length < 20) return

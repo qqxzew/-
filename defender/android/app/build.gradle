@@ -10,6 +10,7 @@ if (localFile.exists()) {
     localFile.withInputStream { localProps.load(it) }
 }
 def openAiKey   = localProps.getProperty('OPENAI_API_KEY',  '""')
+def geminiKey   = localProps.getProperty('GEMINI_API_KEY',  '""')
 def senderEmail = localProps.getProperty('SENDER_EMAIL',    '""')
 def senderPass  = localProps.getProperty('SENDER_APP_PASSWORD', '""')
 
@@ -28,6 +29,7 @@ android {
         versionName "1.0"
 
         buildConfigField "String", "OPENAI_API_KEY",     q(openAiKey)
+        buildConfigField "String", "GEMINI_API_KEY",     q(geminiKey)
         buildConfigField "String", "SENDER_EMAIL",       q(senderEmail)
         buildConfigField "String", "SENDER_APP_PASSWORD", q(senderPass)
     }
